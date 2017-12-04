@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+section {
+    height: 100%;
+    overflow: hidden;
+}
+
+.layout {
+    margin: 0 auto;
+    width: 600px;
+}
+
+@media (min-width: 700px) {
+    .layout {
+        width: 600px;
+    }
+}
+
+@media (min-width: 900px) {
+    .layout {
+        width: 800px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .layout {
+        width: 900px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .layout {
+        width: 1100px;
+    }
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.bg {
+    background: url('./bg.jpg') center center;
+    position: absolute;
+    z-index: -1;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background-size: cover;
+    filter: blur(4px);
+}
+
+.bg::after {
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, .4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+main {
+    height: calc(100% - 33vh);
+    padding-top: 10vh;
+}
+
+aside {
+    float: left;
+}
+
+aside figure {
+    width: 46vh;
+    height: 46vh;
+    background: url('./side.jpg') center center;
+    background-size: cover;
+}
+
+.action {
+    display: flex;
+    margin-top: 4vh;
+}
+
+.action span {
+    flex: 1;
+    font-size: 5vh;
+    text-align: center;
+    color: rgba(255, 255, 255, .4);
+    -webkit-transition: color .4s;
+    -moz-transition: color .4s;
+    transition: color .4s;
+    cursor: pointer;
+}
+
+.action .btn-collect.active {
+    color: rgb(246, 74, 34);
+    opacity: .9;
+}
+
+.action span:hover {
+    color: #fff;
+}
+
+.panel {
+    margin-left: 56vh;
+    color: #fff;
+}
+
+.tag {
+    background-color: #2e6eec;
+    font-size: 2vh;
+    padding: .4em .8em;
+}
+
+.panel h2 {
+    font-size: 6vh;
+    margin-top: 2vh;
+}
+
+.icon {
+    display: flex;
+    margin-top: 12vh;
+}
+
+.icon>span {
+    margin-right: 1vh;
+    font-size: 3vh;
+    flex: 1;
+}
+
+.bar-box {
+    display: flex;
+    margin-top: 10vh;
+    align-items: center;
+}
+
+.bar-box .bar {
+    position: relative;
+    flex: 1;
+    height: .8vh;
+    border-radius: .2vh;
+    background: rgba(255, 255, 255, .4)
+}
+
+.time {
+    width: 8vh;
+    font-size: 2vh;
+    margin-left: 5vh;
+}
+
+.bar .progress {
+    position: absolute;
+    height: 0.8vh;
+    width: 0%;
+    background-color: #fff;
+    border-radius: 0.2vh;
+    -webkit-transition: width 0.8s;
+    -moz-transition: width 0.8s;
+    transition: width 0.8s;
+}
+
+main .artist {
+    font-size: 3vh;
+    margin-top: 3vh;
+}
+
+main .lyric {
+    font-size: 2vh;
+    margin-top: 2vh;
+    color: rgba(255, 255, 255, .4)
+}
+
+footer {
+    height: 33vh;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px -.25vh .25vh .25vh rgba(255, 255, 255, 0.2);
+}
+
+footer>.layout {
+    position: relative;
+}
+
+footer .box {
+    position: relative;
+    overflow: hidden;
+    height: 33vh;
+    overflow-x: scroll;
+}
+
+footer ul {
+    position: absolute;
+    left: 0;
+}
+
+footer li {
+    float: left;
+    margin-top: 1vh;
+    margin: 2vh 2vh 0 2vh;
+    width: 20vh;
+    height: 20vh;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+footer li:hover {
+    box-shadow: 0 0 .5vh .5vh rgba(255, 255, 255, 0.8);
+}
+
+footer li .cover {
+    height: 16vh;
+    background-size: cover;
+    background-position: center center;
+}
+
+footer h3 {
+    font-size: 2vh;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 1vh;
+}
+
+footer li.active {
+    box-shadow: 0 0 .5vh .5vh rgba(255, 255, 255, 0.8);
+}
+
+footer .iconfont {
+    position: absolute;
+    top: 6vh;
+    font-size: 6vh;
+    color: rgba(255, 255, 255, .4);
+    opacity: 0;
+    transition: all .4s;
+    cursor: pointer;
+}
+
+footer:hover .iconfont {
+    opacity: 1;
+}
+
+footer .iconfont:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+footer .icon-left {
+    left: -8vh;
+}
+
+footer .icon-right {
+    right: -8vh;
+}
